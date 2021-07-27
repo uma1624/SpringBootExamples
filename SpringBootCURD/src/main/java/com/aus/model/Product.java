@@ -4,14 +4,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Product {
+	@Id
+	@SequenceGenerator(name = "seq", sequenceName = "seq")
+	  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
 	private Long id;
 	private String name;
 	private String brand;
 	private double price;
-	@Id
+	
 	public Long getId() {
 		return id;
 	}
