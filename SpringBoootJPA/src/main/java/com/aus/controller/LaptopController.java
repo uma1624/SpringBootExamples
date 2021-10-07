@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class LaptopController {
     @Autowired
@@ -24,6 +26,11 @@ public class LaptopController {
 @GetMapping("/getByid/{id}")
     public ResponseEntity<Laptop> getByid(@PathVariable  Long id){
        return new ResponseEntity<>(laptopService.getById(id),HttpStatus.OK);
+    }
+
+    @GetMapping("/findAll")
+    public ResponseEntity<List<Laptop>> getfindAll(){
+        return new ResponseEntity<List<Laptop>>(laptopService.findAll(),HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")

@@ -5,6 +5,7 @@ import com.aus.repository.LaptopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -18,6 +19,9 @@ public class LaptopService {
     }
     public  Laptop getById(Long id){
         return laptopRepository.getById(id);
+    }
+    public List<Laptop> findAll(){
+        return laptopRepository.findAll();
     }
 
     public  Laptop updatebyId(Long id,Laptop update){

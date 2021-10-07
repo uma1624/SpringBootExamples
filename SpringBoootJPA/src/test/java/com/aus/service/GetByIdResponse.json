@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "name": "Uma1",
+  "brand": {
+    "id": 1,
+    "brandname": "Sankar"
+  }
+}
